@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galendário - O Tempo é Alvinegro</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+
+<header>
+    <div class="logo-placeholder">GALENDÁRIO</div>
+    <nav class="filters">
+        <button onclick="filterEvents('todos')">Todos</button>
+        <button onclick="filterEvents('titulos')">Títulos</button>
+        <button onclick="filterEvents('idolos')">Ídolos</button>
+        <button onclick="filterEvents('jogos')">Jogos</button>
+        <button onclick="filterEvents('gols')">Gols</button>
+        <button onclick="filterEvents('torcida')">Memórias</button>
+    </nav>
+</header>
+
+<main class="container">
+    <section id="calendar-wrapper">
+        <div class="nav-facil">
+            <select id="selectDia"></select>
+            <select id="selectMes"></select>
+            <select id="selectAno"></select>
+            <button onclick="irParaData()" class="btn-ir">IR</button>
+        </div>
+        <div class="calendar-header">
+            <button id="prevMonth">❮</button>
+            <h2 id="monthDisplay"></h2>
+            <button id="nextMonth">❯</button>
+        </div>
+        <div id="calendar-grid"></div>
+    </section>
+
+    <aside id="sidebar">
+        <div id="event-details">
+            <button onclick="compartilharDia()" class="btn-share">📤 Compartilhar Dia</button>
+            <h3>Detalhes do Dia</h3>
+            <div id="details-content"><p>Escolha uma data para ver a história do Galo.</p></div>
+        </div>
+
+        <div id="memory-section">
+            <h4>Eternize sua Memória</h4>
+            <form id="memory-form">
+                <input type="text" id="userName" placeholder="Seu nome" required>
+                <input type="text" id="userLocation" placeholder="Cidade/Local">
+                <textarea id="userMemory" placeholder="Sua história alvinegra..." required></textarea>
+                <button type="submit" class="btn-submit">Marcar no Galendário</button>
+            </form>
+        </div>
+    </aside>
+</main>
+<script src="script.js"></script>
+</body>
+</html>
